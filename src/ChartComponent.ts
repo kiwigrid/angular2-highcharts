@@ -28,6 +28,7 @@ export class ChartComponent {
     @Output() redraw = new EventEmitter<ChartEvent>();
     @Output() selection = new EventEmitter<ChartEvent>();
     @Input() tooltipFormatter;
+    @Input() onLoad;
 
     chart: any;
     element: ElementRef;

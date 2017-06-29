@@ -18,32 +18,32 @@ var ChartXAxisComponent = (function () {
         this.pointInBreak = new core_1.EventEmitter();
         this.setExtremes = new core_1.EventEmitter();
     }
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], ChartXAxisComponent.prototype, "afterBreaks", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], ChartXAxisComponent.prototype, "afterSetExtremes", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], ChartXAxisComponent.prototype, "pointBreak", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], ChartXAxisComponent.prototype, "pointInBreak", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], ChartXAxisComponent.prototype, "setExtremes", void 0);
-    ChartXAxisComponent = __decorate([
-        core_1.Directive({
-            selector: 'xAxis'
-        })
-    ], ChartXAxisComponent);
     return ChartXAxisComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], ChartXAxisComponent.prototype, "afterBreaks", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], ChartXAxisComponent.prototype, "afterSetExtremes", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], ChartXAxisComponent.prototype, "pointBreak", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], ChartXAxisComponent.prototype, "pointInBreak", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], ChartXAxisComponent.prototype, "setExtremes", void 0);
+ChartXAxisComponent = __decorate([
+    core_1.Directive({
+        selector: 'xAxis'
+    })
+], ChartXAxisComponent);
 exports.ChartXAxisComponent = ChartXAxisComponent;
 //# sourceMappingURL=ChartXAxisComponent.js.map

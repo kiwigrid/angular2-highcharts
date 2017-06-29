@@ -3,7 +3,7 @@ import {Component} from '../../../node_modules/@angular/core';
 @Component({
     selector: 'chart-events-example',
     template: `
-        <chart [options]="options" (selection)="onChartSelection($event)" [tooltipFormatter]="tooltipFormatter">
+        <chart [options]="options" (selection)="onChartSelection($event)" [tooltipFormatter]="tooltipFormatter" [onLoad]="onLoad">
             <series (mouseOver)="onSeriesMouseOver($event)">
                 <point (select)="onPointSelect($event)" (mouseOver)="onMouseOver($event)"></point>
             </series>
@@ -40,5 +40,9 @@ export class ChartEventsExample {
 
     tooltipFormatter = (e) => {
     	return `x: ${e.x} y: ${e.y}`;
+    }
+
+    onLoad = (e) => {
+        console.log('onLoad', e);
     }
 }

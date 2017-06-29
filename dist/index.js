@@ -25,9 +25,9 @@ var CHART_DIRECTIVES = [
     ChartXAxisComponent_1.ChartXAxisComponent,
     ChartYAxisComponent_1.ChartYAxisComponent
 ];
-var ChartModule = (function () {
-    var ChartModule = ChartModule_1 = function ChartModule() {
-    };
+var ChartModule = ChartModule_1 = (function () {
+    function ChartModule() {
+    }
     ChartModule.forRoot = function (highchartsStatic) {
         var highchartsModules = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -43,14 +43,14 @@ var ChartModule = (function () {
             ]
         };
     };
-    ChartModule = ChartModule_1 = __decorate([
-        core_1.NgModule({
-            declarations: [CHART_DIRECTIVES],
-            exports: [CHART_DIRECTIVES]
-        })
-    ], ChartModule);
     return ChartModule;
-    var ChartModule_1;
 }());
+ChartModule = ChartModule_1 = __decorate([
+    core_1.NgModule({
+        declarations: [CHART_DIRECTIVES],
+        exports: [CHART_DIRECTIVES]
+    })
+], ChartModule);
 exports.ChartModule = ChartModule;
+var ChartModule_1;
 //# sourceMappingURL=index.js.map

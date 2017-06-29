@@ -78,6 +78,11 @@ function createBaseOpts(chartCmp, seriesCmp, pointCmp, xAxisCmp, yAxisCmp, eleme
                 return chartCmp.tooltipFormatter(this);
             } });
     }
+    if (typeof chartCmp.onLoad === 'function') {
+        opts.chart.events['load'] = function () {
+            return chartCmp.onLoad(this);
+        };
+    }
     if (seriesCmp) {
         seriesEvents.forEach(function (eventName) {
             opts.plotOptions.series.events[eventName] = opts.plotOptions.series.events[eventName] || function (event) {

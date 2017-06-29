@@ -46,10 +46,10 @@ var HighchartsServiceMock = (function () {
     HighchartsServiceMock.prototype.getHighchartsStatic = function () {
         return highchartsStatic;
     };
-    HighchartsServiceMock = __decorate([
-        core_1.Injectable()
-    ], HighchartsServiceMock);
     return HighchartsServiceMock;
 }());
+HighchartsServiceMock = __decorate([
+    core_1.Injectable()
+], HighchartsServiceMock);
 exports.HighchartsServiceMock = HighchartsServiceMock;
 //# sourceMappingURL=Mocks.js.map

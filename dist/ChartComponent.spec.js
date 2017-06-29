@@ -21,14 +21,14 @@ function main() {
         var TestComponent = (function () {
             function TestComponent() {
             }
-            TestComponent = __decorate([
-                core_1.Component({
-                    selector: 'test-component',
-                    template: ''
-                })
-            ], TestComponent);
             return TestComponent;
         }());
+        TestComponent = __decorate([
+            core_1.Component({
+                selector: 'test-component',
+                template: ''
+            })
+        ], TestComponent);
         beforeEach(function () {
             highchartsServiceMock = new Mocks_1.HighchartsServiceMock();
             testing_1.TestBed.configureTestingModule({

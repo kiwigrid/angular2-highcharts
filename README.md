@@ -216,6 +216,37 @@ class AppComponent {
 ```
 👉 [Live Demo](http://plnkr.co/edit/OQSFSKisIIWAH0megy4d?p=preview)
 
+Another option is to use the supplied event callback "onLoad":
+
+```TypeScript
+@Component({
+    selector: 'my-app',
+    directives: [CHART_DIRECTIVES],
+    template: `
+      <chart [options]="options"
+              [onLoad]="saveInstance">
+      </chart>
+    `
+})
+class AppComponent {
+    constructor() {
+        this.options = {
+          chart: { type: 'spline' },
+          title: { text : 'dynamic data example'}
+          series: [{ data: [2,3,5,8,13] }]
+        };
+        setInterval(() => this.chart.series[0].addPoint(Math.random() * 10), 1000);
+    }
+    chart : Object;
+    options: Object;
+    saveInstance(chartInstance) {
+        this.chart = chartInstance;
+    }
+}
+```
+
+The difference here is that you keep the context and zone of your component.
+
 ### Tooltip Formatter for Chart Object
 
 angular2-higcharts provides possibility to override the native highcharts tooltip formatter (instead of using the highcharts callback)

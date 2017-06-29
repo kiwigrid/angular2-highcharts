@@ -13,11 +13,11 @@ var core_1 = require("@angular/core");
 var HighchartsStatic = (function () {
     function HighchartsStatic() {
     }
-    HighchartsStatic = __decorate([
-        core_1.Injectable()
-    ], HighchartsStatic);
     return HighchartsStatic;
 }());
+HighchartsStatic = __decorate([
+    core_1.Injectable()
+], HighchartsStatic);
 exports.HighchartsStatic = HighchartsStatic;
 var HighchartsService = (function () {
     function HighchartsService(highchartsStatic) {
@@ -26,11 +26,11 @@ var HighchartsService = (function () {
     HighchartsService.prototype.getHighchartsStatic = function () {
         return this._highchartsStatice;
     };
-    HighchartsService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [HighchartsStatic])
-    ], HighchartsService);
     return HighchartsService;
 }());
+HighchartsService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [HighchartsStatic])
+], HighchartsService);
 exports.HighchartsService = HighchartsService;
 //# sourceMappingURL=HighchartsService.js.map

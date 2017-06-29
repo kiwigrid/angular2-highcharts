@@ -19,10 +19,10 @@ export declare class ChartComponent {
     redraw: EventEmitter<ChartEvent>;
     selection: EventEmitter<ChartEvent>;
     tooltipFormatter: any;
+    onLoad: any;
     chart: any;
     element: ElementRef;
     highchartsService: HighchartsService;
-    test: any;
     private userOpts;
     private baseOpts;
     type: string;
