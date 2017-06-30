@@ -7,7 +7,6 @@ var chartEvents = [
     'beforePrint',
     'drilldown',
     'drillup',
-    'load',
     'redraw',
     'selection'
 ];
@@ -78,9 +77,9 @@ function createBaseOpts(chartCmp, seriesCmp, pointCmp, xAxisCmp, yAxisCmp, eleme
                 return chartCmp.tooltipFormatter(this);
             } });
     }
-    if (typeof chartCmp.onLoad === 'function') {
+    if (typeof chartCmp.load === 'function') {
         opts.chart.events['load'] = function () {
-            return chartCmp.onLoad(this);
+            return chartCmp.load(this);
         };
     }
     if (seriesCmp) {

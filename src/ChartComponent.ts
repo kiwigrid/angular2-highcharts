@@ -24,11 +24,10 @@ export class ChartComponent {
     @Output() beforePrint = new EventEmitter<ChartEvent>();
     @Output() drilldown = new EventEmitter<ChartEvent>();
     @Output() drillup = new EventEmitter<ChartEvent>();
-    @Output() load = new EventEmitter<ChartEvent>();
     @Output() redraw = new EventEmitter<ChartEvent>();
     @Output() selection = new EventEmitter<ChartEvent>();
     @Input() tooltipFormatter;
-    @Input() onLoad;
+    @Input() load;
 
     chart: any;
     element: ElementRef;

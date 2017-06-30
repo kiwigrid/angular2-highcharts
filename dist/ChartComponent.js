@@ -25,7 +25,6 @@ var ChartComponent = (function () {
         this.beforePrint = new core_1.EventEmitter();
         this.drilldown = new core_1.EventEmitter();
         this.drillup = new core_1.EventEmitter();
-        this.load = new core_1.EventEmitter();
         this.redraw = new core_1.EventEmitter();
         this.selection = new core_1.EventEmitter();
         this.type = 'Chart';
@@ -94,10 +93,6 @@ var ChartComponent = (function () {
     __decorate([
         core_1.Output(),
         __metadata("design:type", Object)
-    ], ChartComponent.prototype, "load", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
     ], ChartComponent.prototype, "redraw", void 0);
     __decorate([
         core_1.Output(),
@@ -110,7 +105,7 @@ var ChartComponent = (function () {
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], ChartComponent.prototype, "onLoad", void 0);
+    ], ChartComponent.prototype, "load", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", String)

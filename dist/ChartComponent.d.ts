@@ -15,11 +15,10 @@ export declare class ChartComponent {
     beforePrint: EventEmitter<ChartEvent>;
     drilldown: EventEmitter<ChartEvent>;
     drillup: EventEmitter<ChartEvent>;
-    load: EventEmitter<ChartEvent>;
     redraw: EventEmitter<ChartEvent>;
     selection: EventEmitter<ChartEvent>;
     tooltipFormatter: any;
-    onLoad: any;
+    load: any;
     chart: any;
     element: ElementRef;
     highchartsService: HighchartsService;
