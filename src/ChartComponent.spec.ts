@@ -21,6 +21,7 @@ export function main() {
             onCreated: any;
             onEvent: any;
             tooltipFormatter: any;
+            onLoad: any;
         }
 
         beforeEach(() => {
@@ -91,16 +92,19 @@ export function main() {
             });
         });
 
-        describe('should emit Highcharts chart event', () => {
-            it('"load"', (done) => {
-                create('<chart [options]="options" (load)="onEvent()"></chart>').then(fixture => {
-                    fixture.componentInstance.onEvent = () => done();
+        it('should call load callback', (done) => {
+                create('<chart [options]="options" [load]="onLoad"></chart>').then(fixture => {
                     fixture.componentInstance.options = ['options'];
+                    fixture.componentInstance.onLoad = jasmine.createSpy('loadCallback').and.callFake(() => {
+                        done();
+                    });
                     fixture.detectChanges();
+
                     ChartEventEmitter.emitChartEvent('load');
                 });
-            });
+        });
 
+        describe('should emit Highcharts chart event', () => {
             it('"addSeries"', (done) => {
                 create('<chart [options]="options" (addSeries)="onEvent()"></chart>').then(fixture => {
                     fixture.componentInstance.onEvent = () => done();
@@ -143,15 +147,6 @@ export function main() {
                     fixture.componentInstance.options = ['options'];
                     fixture.detectChanges();
                     ChartEventEmitter.emitChartEvent('drillup');
-                });
-            });
-
-            it('"load"', (done) => {
-                create('<chart [options]="options" (load)="onEvent()"></chart>').then(fixture => {
-                    fixture.componentInstance.onEvent = () => done();
-                    fixture.componentInstance.options = ['options'];
-                    fixture.detectChanges();
-                    ChartEventEmitter.emitChartEvent('load');
                 });
             });
 

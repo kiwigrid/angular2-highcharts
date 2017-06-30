@@ -91,15 +91,17 @@ function main() {
                 });
             });
         });
-        describe('should emit Highcharts chart event', function () {
-            it('"load"', function (done) {
-                create('<chart [options]="options" (load)="onEvent()"></chart>').then(function (fixture) {
-                    fixture.componentInstance.onEvent = function () { return done(); };
-                    fixture.componentInstance.options = ['options'];
-                    fixture.detectChanges();
-                    Mocks_1.ChartEventEmitter.emitChartEvent('load');
+        it('should call load callback', function (done) {
+            create('<chart [options]="options" [load]="onLoad"></chart>').then(function (fixture) {
+                fixture.componentInstance.options = ['options'];
+                fixture.componentInstance.onLoad = jasmine.createSpy('loadCallback').and.callFake(function () {
+                    done();
                 });
+                fixture.detectChanges();
+                Mocks_1.ChartEventEmitter.emitChartEvent('load');
             });
+        });
+        describe('should emit Highcharts chart event', function () {
             it('"addSeries"', function (done) {
                 create('<chart [options]="options" (addSeries)="onEvent()"></chart>').then(function (fixture) {
                     fixture.componentInstance.onEvent = function () { return done(); };
@@ -138,14 +140,6 @@ function main() {
                     fixture.componentInstance.options = ['options'];
                     fixture.detectChanges();
                     Mocks_1.ChartEventEmitter.emitChartEvent('drillup');
-                });
-            });
-            it('"load"', function (done) {
-                create('<chart [options]="options" (load)="onEvent()"></chart>').then(function (fixture) {
-                    fixture.componentInstance.onEvent = function () { return done(); };
-                    fixture.componentInstance.options = ['options'];
-                    fixture.detectChanges();
-                    Mocks_1.ChartEventEmitter.emitChartEvent('load');
                 });
             });
             it('"redraw"', function (done) {
