@@ -3,9 +3,9 @@
   "version": "0.6.1",
   "description": "Highcharts for your Angular2 project",
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf",
+    "clean": "./node_modules/.bin/rimraf dist",
     "watch": "ntsc -w",
-    "build": "npm run clean -rf dist && ngc",
+    "build": "npm run clean && ngc",
     "test": "karma start karma.conf.js",
     "prepublishOnly": "npm run build"
   },
@@ -20,7 +20,10 @@
     "highstock",
     "highmaps"
   ],
-  "author": "Norman Leyda",
+  "authors": [
+    "Norman Leyda",
+    "Marcel Kilian"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kiwigrid/angular2-highcharts/issues"
