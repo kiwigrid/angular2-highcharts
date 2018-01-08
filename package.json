@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "description": "Highcharts for your Angular2 project",
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf dist",
+    "clean": "rimraf dist",
     "watch": "ntsc -w",
     "build": "npm run clean && ngc",
     "test": "karma start karma.conf.js",
